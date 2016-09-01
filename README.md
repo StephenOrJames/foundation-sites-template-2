@@ -1,4 +1,4 @@
-# Foundation for Sites Template (custom)
+# Foundation for Sites Template 2
 
 This is a custom template for using [Foundation for Sites](https://foundation.zurb.com/sites) based on [the official starter template](https://github.com/zurb/foundation-sites-template) and [the official ZURB template](https://github.com/zurb/foundation-zurb-template). It is more advanced than the starter template, but only provides *some* of the tasks offered by the ZURB template. The structure used for folder organization is also different.
 
@@ -15,7 +15,8 @@ This template includes the following:
 
 To use this template, you will need:
 - [Git](https://git-scm.com/)
-- [NodeJS](https://nodejs.org/en/) (with [npm](https://www.npmjs.com/))
+- [NodeJS](https://nodejs.org/en/)
+  - [npm](https://www.npmjs.com/) (automatically installed with NodeJS on some systems)
 - [Bower](https://bower.io/)
 
 
@@ -46,6 +47,10 @@ Once you've set up the template, you should have a folder structure similar to t
     - js
     - scss
 
-Your files will be added to the respective folders within `src`, and will be compiled and/or compressed into `dist`. Note that the output files for CSS and JavaScript will be app.css and app.js respectively.
+Your files will be added to the respective folders within `src`, and will be compiled and/or compressed into `dist`.
 
-**Note: Any file manually placed in `dist` may be deleted, as a part of the build process includes deleting `dist`.**
+
+## Notes
+
+- The output files for CSS and JavaScript will be app.css and app.js respectively.
+- Any file manually placed in `dist` may be deleted, as a part of the build process includes deleting `dist`.
