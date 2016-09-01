@@ -53,4 +53,5 @@ Your files will be added to the respective folders within `src`, and will be com
 ## Notes
 
 - The output files for CSS and JavaScript will be app.css and app.js respectively.
+- The `bower_components` and `node_modules` folders contain the dependencies installed by with bower and npm.
 - Any file manually placed in `dist` may be deleted, as a part of the build process includes deleting `dist`.
