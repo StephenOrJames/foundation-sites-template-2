@@ -46,7 +46,7 @@ gulp.task("cleanup", function() {
   return del(paths.dist);
 });
 
-gulp.task("images", ["cleanup"], function() {
+gulp.task("images", function() {
   return gulp.src("src/img/**/*")
     .pipe($.imagemin({
       progressive: true
@@ -54,7 +54,7 @@ gulp.task("images", ["cleanup"], function() {
     .pipe(gulp.dest(paths.dist + "/img"));
 });
 
-gulp.task("scripts", ["cleanup"], function() {
+gulp.task("scripts", function() {
   return gulp.src(paths.scripts)
     .pipe($.babel())
     .pipe($.concat("app.js"))
@@ -64,7 +64,7 @@ gulp.task("scripts", ["cleanup"], function() {
     .pipe(gulp.dest(paths.dist + "/js"));
 });
 
-gulp.task("styles", ["cleanup"], function() {
+gulp.task("styles", function() {
   return gulp.src("src/scss/app.scss")
     .pipe($.sass({
       includePaths: paths.styles,
@@ -78,7 +78,8 @@ gulp.task("styles", ["cleanup"], function() {
     .pipe(gulp.dest(paths.dist + "/css"));
 });
 
-gulp.task("default", ["images", "scripts", "styles"], function() {
+gulp.task("default", ["cleanup"], function() {
+  gulp.run(["images", "scripts", "styles"]);
   gulp.watch(["src/img/**/*"], ["images"]);
   gulp.watch(["src/scss/**/*.scss"], ["styles"]);
   gulp.watch(["src/js/**/*.js"], ["scripts"]);
